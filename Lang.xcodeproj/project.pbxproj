@@ -20,6 +20,10 @@
 		734758CC2B0F258200E56CA2 /* ProgCharStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 734758CB2B0F258200E56CA2 /* ProgCharStream.m */; };
 		734758D02B108D2700E56CA2 /* AstNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 734758CF2B108D2700E56CA2 /* AstNode.m */; };
 		734758D32B108E0500E56CA2 /* AstParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 734758D22B108E0500E56CA2 /* AstParser.m */; };
+		734DD1912B15E6D400A02477 /* Prog.m in Sources */ = {isa = PBXBuildFile; fileRef = 734DD1902B15E6D400A02477 /* Prog.m */; };
+		734DD1942B15EFB600A02477 /* AstFuncCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 734DD1932B15EFB600A02477 /* AstFuncCall.m */; };
+		734DD1972B15EFDC00A02477 /* AstFuncDecl.m in Sources */ = {isa = PBXBuildFile; fileRef = 734DD1962B15EFDC00A02477 /* AstFuncDecl.m */; };
+		734DD19A2B15EFED00A02477 /* AstFuncBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 734DD1992B15EFED00A02477 /* AstFuncBody.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,14 @@
 		734758CF2B108D2700E56CA2 /* AstNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AstNode.m; sourceTree = "<group>"; };
 		734758D12B108E0500E56CA2 /* AstParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AstParser.h; sourceTree = "<group>"; };
 		734758D22B108E0500E56CA2 /* AstParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AstParser.m; sourceTree = "<group>"; };
+		734DD18F2B15E6D400A02477 /* Prog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prog.h; sourceTree = "<group>"; };
+		734DD1902B15E6D400A02477 /* Prog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Prog.m; sourceTree = "<group>"; };
+		734DD1922B15EFB600A02477 /* AstFuncCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AstFuncCall.h; sourceTree = "<group>"; };
+		734DD1932B15EFB600A02477 /* AstFuncCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AstFuncCall.m; sourceTree = "<group>"; };
+		734DD1952B15EFDC00A02477 /* AstFuncDecl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AstFuncDecl.h; sourceTree = "<group>"; };
+		734DD1962B15EFDC00A02477 /* AstFuncDecl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AstFuncDecl.m; sourceTree = "<group>"; };
+		734DD1982B15EFED00A02477 /* AstFuncBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AstFuncBody.h; sourceTree = "<group>"; };
+		734DD1992B15EFED00A02477 /* AstFuncBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AstFuncBody.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +128,14 @@
 				734758CF2B108D2700E56CA2 /* AstNode.m */,
 				734758D12B108E0500E56CA2 /* AstParser.h */,
 				734758D22B108E0500E56CA2 /* AstParser.m */,
+				734DD1922B15EFB600A02477 /* AstFuncCall.h */,
+				734DD1932B15EFB600A02477 /* AstFuncCall.m */,
+				734DD1952B15EFDC00A02477 /* AstFuncDecl.h */,
+				734DD1962B15EFDC00A02477 /* AstFuncDecl.m */,
+				734DD1982B15EFED00A02477 /* AstFuncBody.h */,
+				734DD1992B15EFED00A02477 /* AstFuncBody.m */,
+				734DD18F2B15E6D400A02477 /* Prog.h */,
+				734DD1902B15E6D400A02477 /* Prog.m */,
 			);
 			path = AST;
 			sourceTree = "<group>";
@@ -192,13 +212,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				734758CC2B0F258200E56CA2 /* ProgCharStream.m in Sources */,
+				734DD1942B15EFB600A02477 /* AstFuncCall.m in Sources */,
 				734758D32B108E0500E56CA2 /* AstParser.m in Sources */,
 				734758B02B0F038B00E56CA2 /* ViewController.m in Sources */,
+				734DD1972B15EFDC00A02477 /* AstFuncDecl.m in Sources */,
 				734758D02B108D2700E56CA2 /* AstNode.m in Sources */,
 				734758AA2B0F038B00E56CA2 /* AppDelegate.m in Sources */,
+				734DD1912B15E6D400A02477 /* Prog.m in Sources */,
 				734758BB2B0F038D00E56CA2 /* main.m in Sources */,
 				734758C92B0F1F3E00E56CA2 /* TokenKind.m in Sources */,
 				734758C62B0F04EF00E56CA2 /* Tokenizer.m in Sources */,
+				734DD19A2B15EFED00A02477 /* AstFuncBody.m in Sources */,
 				734758AD2B0F038B00E56CA2 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,12 @@
 
 @interface Tokenizer : NSObject
 
++ (instancetype)tokenWithProg:(NSString *)prog;
+
 + (NSArray<TokenKind *> *)parseWithProg:(NSString *)prog;
+
+- (TokenKind *)peek;
+
+- (TokenKind *)next;
 
 @end

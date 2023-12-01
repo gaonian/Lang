@@ -13,4 +13,10 @@
 
 @implementation AstNode
 
+- (void)dump:(NSString *)prefix {}
+
+@end
+
+@implementation Statement
+
 @end

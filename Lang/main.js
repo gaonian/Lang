@@ -4,11 +4,12 @@ function sayHello(){
     NSLog("Hello World!!!!");
 }
 function foo(){
-    var a = 1;
-    a++;
-    b /= 1234.1.1fabc + 1;
+//    var a = 1;
+//    a++;
+//    b /= 1234.1.1fabc + 1;
+    NSLog("foo");
     return;
 }
 //调用刚才声明的函数
 sayHello();
-sayHello();
+foo();

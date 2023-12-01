@@ -27,13 +27,16 @@
     return self;
 }
 
-+ (NSArray<TokenKind *> *)parseWithProg:(NSString *)prog {
-    NSLog(@"%@", prog);
-    
++ (instancetype)tokenWithProg:(NSString *)prog {
     ProgCharStream *stream = [ProgCharStream initWithContent:prog];
     Tokenizer *tokenizer = [[Tokenizer alloc] init];
     tokenizer.stream = stream;
-    
+    return tokenizer;
+}
+
++ (NSArray<TokenKind *> *)parseWithProg:(NSString *)prog {
+    NSLog(@"%@", prog);
+    Tokenizer *tokenizer = [Tokenizer tokenWithProg:prog];
     NSMutableArray *aryTemp = [NSMutableArray array];
     while ([tokenizer peek].type != TokenTypeEOF) {
         TokenKind *kind = [tokenizer next];

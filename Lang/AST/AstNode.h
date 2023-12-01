@@ -9,4 +9,10 @@
 
 @interface AstNode : NSObject
 
+- (void)dump:(NSString *)prefix;
+
+@end
+
+@interface Statement : AstNode
+
 @end

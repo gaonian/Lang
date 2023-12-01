@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "Tokenizer.h"
+#import "AST/AstParser.h"
 
 @interface ViewController ()
 
@@ -20,7 +21,11 @@
     NSString* patchPath = [NSBundle.mainBundle pathForResource:@"main" ofType:@"js"];
     NSString* script = [NSString stringWithContentsOfFile:patchPath encoding:NSUTF8StringEncoding error:nil];
     
-    [Tokenizer parseWithProg:script];
+//    [Tokenizer parseWithProg:script];
+    
+    AstParser *parser = [[AstParser alloc] init];
+    parser.tokenizer = [Tokenizer tokenWithProg:script];
+    [parser parseProg];
 }
 
 

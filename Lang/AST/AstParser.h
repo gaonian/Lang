@@ -6,12 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Tokenizer.h"
+@class Tokenizer;
+@class Prog;
 
 @interface AstParser : NSObject
 
 @property (nonatomic, strong) Tokenizer * tokenizer;
 
-- (void)parseProg;
+- (Prog *)parseProg;
 
 @end

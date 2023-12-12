@@ -8,6 +8,8 @@
 #import "ViewController.h"
 #import "Tokenizer.h"
 #import "AST/AstParser.h"
+#import "Prog.h"
+#import "RefResolver.h"
 
 @interface ViewController ()
 
@@ -25,7 +27,14 @@
     
     AstParser *parser = [[AstParser alloc] init];
     parser.tokenizer = [Tokenizer tokenWithProg:script];
-    [parser parseProg];
+    Prog *prog = [parser parseProg];
+    [prog dump:@""];
+    
+    //语义分析
+    RefResolver *resolver = [[RefResolver alloc] init];
+    [resolver visitProg:prog];
+    NSLog(@"\n语法分析后的AST，注意自定义函数的调用已被消解:");
+    [prog dump:@""];
 }
 
 

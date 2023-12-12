@@ -11,6 +11,8 @@
 #import "AstFuncCall.h"
 #import "AstFuncDecl.h"
 #import "AstFuncBody.h"
+#import "Prog.h"
+#import "Tokenizer.h"
 
 @interface AstParser ()
 
@@ -33,7 +35,7 @@
  * 语法规则：
  * prog = (functionDecl | functionCall)* ;
  */
-- (void)parseProg {
+- (Prog *)parseProg {
     NSMutableArray *stmts = [NSMutableArray array];
     Statement *stmt = nil;
     TokenKind *token = [self.tokenizer peek];
@@ -48,13 +50,14 @@
         }
         if (stmt) {
             [stmts addObject:stmt];
-            NSLog(@"success");
         } else {
             NSLog(@"Unrecognized token: %@", token.text);
         }
         token = [self.tokenizer peek];
     }
-    NSLog(@"---- %@", stmts);
+    Prog *prog = [[Prog alloc] init];
+    prog.stmts = stmts;
+    return prog;
 }
 
 /**
@@ -93,27 +96,12 @@
             if ([token2.text isEqualToString:@";"]) {
                 AstFuncCall *call = [[AstFuncCall alloc] init];
                 call.name = token.text;
+                call.parameters = aryParam;
                 return call;
             }
         }
     }
     return nil;
-    
-    /*
-             //消化掉一个分号：;
-             t2 = this.tokenizer.next();
-             if (t2.text == ";"){
-                 return new FunctionCall(t.text, params);
-             }
-             else{
-                 console.log("Expecting a semicolon in FunctionCall, while we got a " + t2.text);
-                 return null;
-             }
-         }
-     }
-
-     return null;
-     */
 }
 
 /**
@@ -124,6 +112,71 @@
  * null-意味着解析过程出错。
  */
 - (AstFuncDecl *)parseFunctionDecl {
+    // 跳过关键字 ‘function’
+    [self.tokenizer next];
+    
+    TokenKind *token = [self.tokenizer next];
+    if (token.type == TokenTypeIdentifier) {
+        TokenKind *token1 = [self.tokenizer next];
+        if ([token1.text isEqualToString:@"("]) {
+            TokenKind *token2 = [self.tokenizer next];
+            if ([token2.text isEqualToString:@")"]) {
+                // 解析函数体
+                AstFuncBody *body = [self parseFunctionBody];
+                if (body) {
+                    // 如果解析成功，从这里返回
+                    AstFuncDecl *decl = [[AstFuncDecl alloc] init];
+                    decl.name = token.text;
+                    decl.body = body;
+                    return decl;
+                } else {
+                    NSLog(@"Error parsing FunctionBody in FunctionDecl");
+                    return nil;
+                }
+            } else {
+                NSLog(@"Expecting ')' in FunctionDecl, while we got a %@", token.text);
+                return nil;
+            }
+        } else {
+            NSLog(@"Expecting '(' in FunctionDecl, while we got a %@", token.text);
+            return nil;
+        }
+    }
+    NSLog(@"Expecting a function name, while we got a %@", token.text);
+    return nil;
+}
+
+/**
+ * 解析函数体
+ * 语法规则：
+ * functionBody : '{' functionCall* '}' ;
+ */
+- (AstFuncBody *)parseFunctionBody {
+    NSMutableArray<AstFuncCall *> *aryTemp = [NSMutableArray array];
+    TokenKind *token = [self.tokenizer next];
+    if ([token.text isEqualToString:@"{"]) {
+        while ([self.tokenizer peek].type == TokenTypeIdentifier) {
+            AstFuncCall *call = [self parseFunctionCall];
+            if (call) {
+                [aryTemp addObject:call];
+            } else {
+                NSLog(@"Error parsing a FunctionCall in FunctionBody.");
+                return nil;
+            }
+        }
+        token = [self.tokenizer next];
+        if ([token.text isEqualToString:@"}"]) {
+            AstFuncBody *body = [[AstFuncBody alloc] init];
+            body.stmts = aryTemp;
+            return body;
+        } else {
+            NSLog(@"Expecting '}' in FunctionBody, while we got a %@", token.text);
+            return nil;
+        }
+    } else {
+        NSLog(@"Expecting '{' in FunctionBody, while we got a %@", token.text);
+        return nil;
+    }
     return nil;
 }
 

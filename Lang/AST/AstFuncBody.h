@@ -6,7 +6,7 @@
 //
 
 #import "AstNode.h"
-#import "AstFuncCall.h"
+@class AstFuncCall;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -10,4 +10,8 @@
 
 @interface Prog : AstNode
 
+@property (nonatomic, strong) NSArray<Statement *> * stmts;
+
+- (void)dump:(NSString *)prefix;
+
 @end

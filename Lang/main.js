@@ -7,9 +7,11 @@ function foo(){
 //    var a = 1;
 //    a++;
 //    b /= 1234.1.1fabc + 1;
+    print("hello");
     NSLog("foo");
-    return;
+    sayHello();
 }
+
 //调用刚才声明的函数
 sayHello();
 foo();

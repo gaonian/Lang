@@ -6,6 +6,7 @@
 //
 
 #import "AstFuncBody.h"
+#import "AstFuncCall.h"
 
 @implementation AstFuncBody
 

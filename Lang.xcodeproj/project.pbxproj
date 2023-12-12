@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7308371B2B1A2E03001C213B /* RefResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7308371A2B1A2E03001C213B /* RefResolver.m */; };
+		7342A5E92B1A1FB200AD6F2A /* AstVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7342A5E82B1A1FB200AD6F2A /* AstVisitor.m */; };
 		734758AA2B0F038B00E56CA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 734758A92B0F038B00E56CA2 /* AppDelegate.m */; };
 		734758AD2B0F038B00E56CA2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 734758AC2B0F038B00E56CA2 /* SceneDelegate.m */; };
 		734758B02B0F038B00E56CA2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 734758AF2B0F038B00E56CA2 /* ViewController.m */; };
@@ -27,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		730837192B1A2E03001C213B /* RefResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefResolver.h; sourceTree = "<group>"; };
+		7308371A2B1A2E03001C213B /* RefResolver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefResolver.m; sourceTree = "<group>"; };
+		7342A5E72B1A1FB200AD6F2A /* AstVisitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AstVisitor.h; sourceTree = "<group>"; };
+		7342A5E82B1A1FB200AD6F2A /* AstVisitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AstVisitor.m; sourceTree = "<group>"; };
 		734758A52B0F038B00E56CA2 /* Lang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		734758A82B0F038B00E56CA2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		734758A92B0F038B00E56CA2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -136,6 +142,10 @@
 				734DD1992B15EFED00A02477 /* AstFuncBody.m */,
 				734DD18F2B15E6D400A02477 /* Prog.h */,
 				734DD1902B15E6D400A02477 /* Prog.m */,
+				7342A5E72B1A1FB200AD6F2A /* AstVisitor.h */,
+				7342A5E82B1A1FB200AD6F2A /* AstVisitor.m */,
+				730837192B1A2E03001C213B /* RefResolver.h */,
+				7308371A2B1A2E03001C213B /* RefResolver.m */,
 			);
 			path = AST;
 			sourceTree = "<group>";
@@ -216,9 +226,11 @@
 				734758D32B108E0500E56CA2 /* AstParser.m in Sources */,
 				734758B02B0F038B00E56CA2 /* ViewController.m in Sources */,
 				734DD1972B15EFDC00A02477 /* AstFuncDecl.m in Sources */,
+				7342A5E92B1A1FB200AD6F2A /* AstVisitor.m in Sources */,
 				734758D02B108D2700E56CA2 /* AstNode.m in Sources */,
 				734758AA2B0F038B00E56CA2 /* AppDelegate.m in Sources */,
 				734DD1912B15E6D400A02477 /* Prog.m in Sources */,
+				7308371B2B1A2E03001C213B /* RefResolver.m in Sources */,
 				734758BB2B0F038D00E56CA2 /* main.m in Sources */,
 				734758C92B0F1F3E00E56CA2 /* TokenKind.m in Sources */,
 				734758C62B0F04EF00E56CA2 /* Tokenizer.m in Sources */,
@@ -380,6 +392,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,6 +420,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

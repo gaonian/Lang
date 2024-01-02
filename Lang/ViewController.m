@@ -10,6 +10,7 @@
 #import "AST/AstParser.h"
 #import "Prog.h"
 #import "RefResolver.h"
+#import "Intepretor.h"
 
 @interface ViewController ()
 
@@ -35,6 +36,12 @@
     [resolver visitProg:prog];
     NSLog(@"\n语法分析后的AST，注意自定义函数的调用已被消解:");
     [prog dump:@""];
+    
+    // 运行程序
+    NSLog(@"运行当前的程序：");
+    Intepretor *intepretor = [[Intepretor alloc] init];
+    id retVal = [intepretor visitProg:prog];
+    NSLog(@"程序返回值：%@", retVal);
 }
 
 

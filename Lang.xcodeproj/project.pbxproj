@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7308371B2B1A2E03001C213B /* RefResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7308371A2B1A2E03001C213B /* RefResolver.m */; };
+		7308371F2B43CD30001C213B /* Intepretor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7308371E2B43CD30001C213B /* Intepretor.m */; };
 		7342A5E92B1A1FB200AD6F2A /* AstVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7342A5E82B1A1FB200AD6F2A /* AstVisitor.m */; };
 		734758AA2B0F038B00E56CA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 734758A92B0F038B00E56CA2 /* AppDelegate.m */; };
 		734758AD2B0F038B00E56CA2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 734758AC2B0F038B00E56CA2 /* SceneDelegate.m */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		730837192B1A2E03001C213B /* RefResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefResolver.h; sourceTree = "<group>"; };
 		7308371A2B1A2E03001C213B /* RefResolver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefResolver.m; sourceTree = "<group>"; };
+		7308371D2B43CD30001C213B /* Intepretor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Intepretor.h; sourceTree = "<group>"; };
+		7308371E2B43CD30001C213B /* Intepretor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Intepretor.m; sourceTree = "<group>"; };
 		7342A5E72B1A1FB200AD6F2A /* AstVisitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AstVisitor.h; sourceTree = "<group>"; };
 		7342A5E82B1A1FB200AD6F2A /* AstVisitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AstVisitor.m; sourceTree = "<group>"; };
 		734758A52B0F038B00E56CA2 /* Lang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lang.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +80,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7308371C2B43CCBB001C213B /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				7342A5E72B1A1FB200AD6F2A /* AstVisitor.h */,
+				7342A5E82B1A1FB200AD6F2A /* AstVisitor.m */,
+				730837192B1A2E03001C213B /* RefResolver.h */,
+				7308371A2B1A2E03001C213B /* RefResolver.m */,
+				7308371D2B43CD30001C213B /* Intepretor.h */,
+				7308371E2B43CD30001C213B /* Intepretor.m */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		7347589C2B0F038B00E56CA2 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +112,7 @@
 		734758A72B0F038B00E56CA2 /* Lang */ = {
 			isa = PBXGroup;
 			children = (
+				7308371C2B43CCBB001C213B /* Parser */,
 				734758CD2B108D1200E56CA2 /* AST */,
 				734758C32B0F048800E56CA2 /* Token */,
 				734758C12B0F03E700E56CA2 /* main.js */,
@@ -142,10 +159,6 @@
 				734DD1992B15EFED00A02477 /* AstFuncBody.m */,
 				734DD18F2B15E6D400A02477 /* Prog.h */,
 				734DD1902B15E6D400A02477 /* Prog.m */,
-				7342A5E72B1A1FB200AD6F2A /* AstVisitor.h */,
-				7342A5E82B1A1FB200AD6F2A /* AstVisitor.m */,
-				730837192B1A2E03001C213B /* RefResolver.h */,
-				7308371A2B1A2E03001C213B /* RefResolver.m */,
 			);
 			path = AST;
 			sourceTree = "<group>";
@@ -224,6 +237,7 @@
 				734758CC2B0F258200E56CA2 /* ProgCharStream.m in Sources */,
 				734DD1942B15EFB600A02477 /* AstFuncCall.m in Sources */,
 				734758D32B108E0500E56CA2 /* AstParser.m in Sources */,
+				7308371F2B43CD30001C213B /* Intepretor.m in Sources */,
 				734758B02B0F038B00E56CA2 /* ViewController.m in Sources */,
 				734DD1972B15EFDC00A02477 /* AstFuncDecl.m in Sources */,
 				7342A5E92B1A1FB200AD6F2A /* AstVisitor.m in Sources */,
